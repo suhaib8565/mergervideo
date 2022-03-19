@@ -407,7 +407,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
         await cb.message.edit(
             text=Config.START_TEXT,
             parse_mode="Markdown",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer - The_dsr", url="https://t.me/The_dsr"), InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")], [InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer - The_dsr", url="https://t.me/The_dsr"), InlineKeyboardButton("Support Group", url="https://t.me/Dsrs_Group")], [InlineKeyboardButton("Bots Channel", url="https://t.me/kashir_bots")]]),
             disable_web_page_preview=True
         )
     elif "showThumbnail" in cb.data:
