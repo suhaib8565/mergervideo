@@ -477,7 +477,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
         if (QueueDB.get(cb.from_user.id, None) is None) or (QueueDB.get(cb.from_user.id) == []):
             await cb.answer("Sorry Unkil, Your Queue is Empty!", show_alert=True)
             return
-        merged_vid_path = f"{Config.DOWN_PATH}/{str(cb.from_user.id)}/[@AbirHasan2005]_Merged.{FormtDB.get(cb.from_user.id).lower()}"
+        merged_vid_path = f"{Config.DOWN_PATH}/{str(cb.from_user.id)}/[@kashir_bots]_Merged.{FormtDB.get(cb.from_user.id).lower()}"
         if cb.data.split("_", 1)[-1] == "Yes":
             await cb.message.edit("Okay Unkil,\nSend me new file name!")
             try:
@@ -894,7 +894,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
         if int(file_size) > 2097152000:
             await cb.message.edit(f"Sorry Sir,\n\nFile Size Become {humanbytes(file_size)} !!\nI can't Upload to Telegram!\n\nSo Now Uploading to Streamtape ...")
             await UploadToStreamtape(file=merged_vid_path, editable=cb.message, file_size=file_size)
-            await delete_all(root=f"{Config.DOWN_PATH}/{cb.from_user.id}/")# (c) @AbirHasan2005
+            await delete_all(root=f"{Config.DOWN_PATH}/{cb.from_user.id}/")# (c) @the_dsr
 # This is very simple Telegram Videos Merge Bot.
 # Coded by a Nub.
 # Don't Laugh seeing the codes.
@@ -1259,7 +1259,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
         await cb.message.edit(
             text=Config.START_TEXT,
             parse_mode="Markdown",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer - Ds", url="https://t.me/The_dsr"), InlineKeyboardButton("Support Group", url="https://t.me/Dsrs_Group")], [InlineKeyboardButton("Bots Channel", url="https://t.me/kashir_bots")]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer - Ds", url="https://t.me/The_dsr"), InlineKeyboardButton("Support Group", url="https://t.me/Dsrs_Group")], [InlineKeyboardButton("Bots Channel", url="https://t.me/Dsrs_Group")]]),
             disable_web_page_preview=True
         )
     elif "showThumbnail" in cb.data:
@@ -1540,7 +1540,7 @@ NubBot.run()
                 user = await bot.get_chat_member(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL), user_id=cb.message.chat.id)
                 if user.status == "kicked":
                     await cb.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/dsrrs_group).",
+                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/dsrs_group).",
                         parse_mode="markdown",
                         disable_web_page_preview=True
                     )
@@ -1568,7 +1568,7 @@ NubBot.run()
                 return
             except Exception:
                 await cb.message.edit(
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                    text="Something went Wrong. Contact my [Support Group](https://t.me/Dsrs_Group).",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
@@ -1576,7 +1576,7 @@ NubBot.run()
         await cb.message.edit(
             text=Config.START_TEXT,
             parse_mode="Markdown",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer - @AbirHasan2005", url="https://t.me/AbirHasan2005"), InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")], [InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer - The_dsr", url="https://t.me/the_dsr"), InlineKeyboardButton("Support Group", url="https://t.me/Dsrs_Group")], [InlineKeyboardButton("Bots Channel", url="https://t.me/kashir_bots")]]),
             disable_web_page_preview=True
         )
     elif "showThumbnail" in cb.data:
